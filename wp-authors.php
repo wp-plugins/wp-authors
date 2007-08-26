@@ -5,7 +5,7 @@ Plugin URI: http://www.tsaiberspace.net/projects/wordpress/wp-authors/
 Description: Sidebar widget to list all authors of a blog. Navigate to <a href="widgets.php">Presentation &rarr; Widgets</a> to add to your sidebar.
 Author: Robert Tsai
 Author URI: http://www.tsaiberspace.net/
-Version: 1.0.2
+Version: 1.1
 */
 
 function widget_wpauthors_init() {
@@ -34,8 +34,8 @@ function widget_wpauthors_init() {
 
 		print <<<EOM
 		$before_widget
-		<ul>
 		$before_title$title$after_title
+		<ul>
 EOM;
 
 		wp_list_authors($author_args);
