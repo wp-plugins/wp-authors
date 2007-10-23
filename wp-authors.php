@@ -9,7 +9,7 @@ Version: 1.3
 */
 
 $locale = get_locale();
-$mofile = dirname(__FILE__) . "/locale/".$locale.".mo";
+$mofile = dirname(__FILE__) . "/locale/$locale.mo";
 load_textdomain('wp-authors', $mofile);
 
 function widget_wpauthors_init() {
