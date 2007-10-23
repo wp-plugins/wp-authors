@@ -3,10 +3,14 @@
 Plugin Name: WP Authors
 Plugin URI: http://www.tsaiberspace.net/projects/wordpress/wp-authors/
 Description: Sidebar widget to list all authors of a blog. Navigate to <a href="widgets.php">Presentation &rarr; Widgets</a> to add to your sidebar.
-Author: Robert Tsai
+Author: Robert Tsai</a>; i18n/l10n by <a href="http://aufBlog.de/">Gerhard Lehnhoff
 Author URI: http://www.tsaiberspace.net/
-Version: 1.2
+Version: 1.3
 */
+
+$locale = get_locale();
+$mofile = dirname(__FILE__) . "/locale/".$locale.".mo";
+load_textdomain('wp-authors', $mofile);
 
 function widget_wpauthors_init() {
 	if ( !function_exists('register_sidebar_widget') )
@@ -20,7 +24,7 @@ function widget_wpauthors_init() {
 		$f = $options['show_fullname'] ? true : false;
 		$hide = $options['hide_empty'] ? true : false;
 		$excludeadmin = $options['exclude_admin'] ? true : false;
-		$title = empty($options['title']) ? __('Authors') :
+		$title = empty($options['title']) ? __('Authors', 'wp-authors') :
 			$options['title'];
 
 		$author_args = array(
@@ -48,7 +52,7 @@ EOM;
 
 	function wp_widget_authors_control() {
 		$defaults = array(
-			'title' => 'Authors',
+			'title' => __('Authors', 'wp-authors'),
 			'count' => true,
 			'show_fullname' => false,
 			'hide_empty' => true,
@@ -72,17 +76,17 @@ EOM;
 		$exclude_admin = $options['exclude_admin'] ? 'checked="checked"' : '';
 ?>
 
-						<p><label for="authors-title"><?php _e('Title:'); ?> <input style="width: 250px;" id="authors-title" name="authors-title" type="text" value="<?php echo $title; ?>" /></label></p>
-						<p style="text-align:right;margin-right:40px;"><label for="authors-count"><?php _e('Show post counts'); ?> <input class="checkbox" type="checkbox" <?php echo $count; ?> id="authors-count" name="authors-count" /></label></p>
-						<p style="text-align:right;margin-right:40px;"><label for="authors-show_fullname"><?php _e('Show full names'); ?> <input class="checkbox" type="checkbox" <?php echo $show_fullname; ?> id="authors-show_fullname" name="authors-show_fullname" /></label></p>
-						<p style="text-align:right;margin-right:40px;"><label for="authors-hide_empty"><?php _e('Hide empty authors'); ?> <input class="checkbox" type="checkbox" <?php echo $hide_empty; ?> id="authors-hide_empty" name="authors-hide_empty" /></label></p>
-						<p style="text-align:right;margin-right:40px;"><label for="authors-exclude_admin"><?php _e('Exclude admin'); ?> <input class="checkbox" type="checkbox" <?php echo $exclude_admin; ?> id="authors-exclude_admin" name="authors-exclude_admin" /></label></p>
+						<p><label for="authors-title"><?php _e('Title:', 'wp-authors'); ?> <input style="width: 250px;" id="authors-title" name="authors-title" type="text" value="<?php echo $title; ?>" /></label></p>
+						<p style="text-align:right;margin-right:40px;"><label for="authors-count"><?php _e('Show post counts', 'wp-authors'); ?> <input class="checkbox" type="checkbox" <?php echo $count; ?> id="authors-count" name="authors-count" /></label></p>
+						<p style="text-align:right;margin-right:40px;"><label for="authors-show_fullname"><?php _e('Show full names', 'wp-authors'); ?> <input class="checkbox" type="checkbox" <?php echo $show_fullname; ?> id="authors-show_fullname" name="authors-show_fullname" /></label></p>
+						<p style="text-align:right;margin-right:40px;"><label for="authors-hide_empty"><?php _e('Hide empty authors', 'wp-authors'); ?> <input class="checkbox" type="checkbox" <?php echo $hide_empty; ?> id="authors-hide_empty" name="authors-hide_empty" /></label></p>
+						<p style="text-align:right;margin-right:40px;"><label for="authors-exclude_admin"><?php _e('Exclude admin', 'wp-authors'); ?> <input class="checkbox" type="checkbox" <?php echo $exclude_admin; ?> id="authors-exclude_admin" name="authors-exclude_admin" /></label></p>
 						<input type="hidden" id="authors-submit" name="authors-submit" value="1" />
 <?php
 	}
 
-	register_sidebar_widget('Authors', 'wp_widget_authors');
-	register_widget_control('Authors', 'wp_widget_authors_control', 300, 200);
+	register_sidebar_widget(__('Authors', 'wp-authors'), 'wp_widget_authors');							
+	register_widget_control(__('Authors', 'wp-authors'), 'wp_widget_authors_control', 300, 200);	
 }
 
 function widget_wpauthors_deactivate() {
