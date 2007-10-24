@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-authors\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2007-10-18 20:59+0100\n"
+"PO-Revision-Date: 2007-10-24 23:56+0100\n"
 "Last-Translator: Gerhard Lehnhoff <GLehnhoff@LeniDesign.de>\n"
 "Language-Team: Gerhard Lehnhoff <aufBlog@gmx.de>\n"
 "MIME-Version: 1.0\n"
@@ -28,17 +28,17 @@ msgstr "Titel:"
 
 #: ../wp-authors.php:83
 msgid "Show post counts"
-msgstr "Zeige Beitraszähler"
+msgstr "Beitragszähler anzeigen"
 
 #: ../wp-authors.php:84
 msgid "Show full names"
-msgstr "Zeige vollen Namen"
+msgstr "Vollen Namen anzeigen"
 
 #: ../wp-authors.php:85
 msgid "Hide empty authors"
-msgstr "Zeige auch Autoren ohne Beiträge"
+msgstr "Autoren ohne Beiträge verbergen"
 
 #: ../wp-authors.php:86
 msgid "Exclude admin"
-msgstr "Verberge admin"
+msgstr "Admin verbergen"
 

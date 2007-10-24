@@ -5,7 +5,7 @@ Plugin URI: http://www.tsaiberspace.net/projects/wordpress/wp-authors/
 Description: Sidebar widget to list all authors of a blog. Navigate to <a href="widgets.php">Presentation &rarr; Widgets</a> to add to your sidebar.
 Author: Robert Tsai</a>; i18n/l10n by <a href="http://aufBlog.de/">Gerhard Lehnhoff
 Author URI: http://www.tsaiberspace.net/
-Version: 1.3
+Version: 1.3.1
 */
 
 $locale = get_locale();
