@@ -2,7 +2,7 @@
 Contributors: rtsai
 Tags: authors, widget
 Requires at least: 2.2
-Tested up to: 2.3
+Tested up to: 2.5
 Stable tag: trunk
 
 This sidebar widget provides a list of authors, useful for multi-author blogs.
